@@ -19,12 +19,17 @@ public class PlayerMovement : MonoBehaviour
 
 	public GUIText goalText;
 
+	public bool selected;
+
 	// Use this for initialization
 	void Start () {
 		originalPosition = transform.position;
 		originalRotation = transform.rotation;
+
+		selected = false;
 	}
-	
+
+
 	// Update is called once per frame
 	void Update () {
 
@@ -32,22 +37,41 @@ public class PlayerMovement : MonoBehaviour
 			initialMousePosition = Input.mousePosition;
 			initTime = Time.time;
 			goalText.enabled = false;
+
+			GameObject nearestObject = null;
+			GameObject[] objects = GameObject.FindGameObjectsWithTag ("Player");
+			foreach (GameObject o in objects) {
+				o.GetComponent<PlayerMovement>().selected = false;
+				if (nearestObject == null) {
+					nearestObject = o;
+				} else {
+					if (Vector3.Distance (o.transform.localPosition, Camera.main.ScreenToWorldPoint(initialMousePosition)) <=
+						Vector3.Distance (nearestObject.transform.position, Camera.main.ScreenToWorldPoint(initialMousePosition))) {
+						nearestObject = o;
+					}
+				}
+			}
+
+			nearestObject.GetComponent<PlayerMovement> ().selected = true;
 		}
 
 		else if(Input.GetMouseButtonUp(0)) {
-            float endTime = Time.time;
-			float timeTaken = endTime - initTime;
 
-			Vector3 endPosition = Input.mousePosition;
-			float distance = Vector3.Distance (initialMousePosition, endPosition);
+			if (selected) {
+				float endTime = Time.time;
+				float timeTaken = endTime - initTime;
 
-			Vector3 differenceVector = ( endPosition - initialMousePosition).normalized;
+				Vector3 endPosition = Input.mousePosition;
+				float distance = Vector3.Distance (initialMousePosition, endPosition);
 
-            movementSpeed = distance / timeTaken;
+				Vector3 differenceVector = (endPosition - initialMousePosition).normalized;
 
-            Vector2 forceVec = new Vector2(movementSpeed * differenceVector.x, movementSpeed * differenceVector.y);
+				movementSpeed = distance / timeTaken;
 
-            GetComponent<Rigidbody2D>().AddForce(forceVec);
+				Vector2 forceVec = new Vector2 (movementSpeed * differenceVector.x, movementSpeed * differenceVector.y);
+
+				GetComponent<Rigidbody2D> ().AddForce (forceVec);
+			}
         }
 	}
 

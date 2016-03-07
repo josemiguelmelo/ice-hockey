@@ -32,6 +32,7 @@ public class GoalScript : MonoBehaviour {
 			GameObject[] players = GameObject.FindGameObjectsWithTag ("Player");
 			GameObject ball = GameObject.FindGameObjectWithTag ("Ball");
 
+			Debug.Log (players.Length);
 			foreach (GameObject p in players) //the line the error is pointing to
 			{
 				p.GetComponent<PlayerMovement>().Reset();
