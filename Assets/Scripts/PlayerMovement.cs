@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovement : MonoBehaviour
+{
 
 	private Vector3 screenPoint;
 	private Vector3 offset;
@@ -14,19 +16,18 @@ public class PlayerMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Debug.Log ("melo foi criado");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButtonDown (0)) {
+
+        if (Input.GetMouseButtonDown (0)) {
 			initialMousePosition = Input.mousePosition;
 			initTime = Time.time;
 		}
 
-		if(Input.GetMouseButtonUp(0)) {
-
-			float endTime = Time.time;
+		else if(Input.GetMouseButtonUp(0)) {
+            float endTime = Time.time;
 			float timeTaken = endTime - initTime;
 
 			Vector3 endPosition = Input.mousePosition;
@@ -34,26 +35,28 @@ public class PlayerMovement : MonoBehaviour {
 
 			Vector3 differenceVector = ( endPosition - initialMousePosition).normalized;
 
-			GameObject player = GameObject.Find ("player_1");
-			Rigidbody2D playerBody = player.GetComponent<Rigidbody2D> ();
+            movementSpeed = distance / timeTaken;
 
-			movementSpeed = distance / timeTaken;
+            Vector2 forceVec = new Vector2(movementSpeed * differenceVector.x, movementSpeed * differenceVector.y);
 
-			playerBody.AddForce(
-				new Vector2( movementSpeed * differenceVector.x , 
-					movementSpeed * differenceVector.y )
-			); 
-		}
-	}
+            GetComponent<Rigidbody2D>().AddForce(forceVec);
 
-	void OnMouseDown()
-	{
-		Debug.Log ("melo clickou");
-	}
+            /*
+			GameObject player = GameObject.FindGameObjectWithTag ("Player");
+            if(player != null)
+            {
+                Rigidbody2D playerBody = player.GetComponent<Rigidbody2D>();
 
-	void OnMouseUp()
-	{
-		Debug.Log ("melo largou");
+                movementSpeed = distance / timeTaken;
+
+                playerBody.AddForce(
+                    new Vector2(movementSpeed * differenceVect  or.x,
+                        movementSpeed * differenceVector.y)
+                );
+            }
+            */
+
+        }
 	}
 
 }
