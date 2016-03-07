@@ -3,23 +3,41 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class GoalScript : MonoBehaviour {
-	public Text goalText;
+	public GUIText goalText;
 
+	public ScoreBehaviour scoreBehaviour;
 	// Use this for initialization
 	void Start () {
 		goalText.enabled = false;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.gameObject.name == "ball") 
 		{
 			goalText.enabled = true;
+
+			int team = 0;
+
+			if (this.name == "goal_right") {
+				team = 0;
+			} else {
+				team = 1;
+			}
+
+
+			scoreBehaviour.incScore (team);
+
+			GameObject[] players = GameObject.FindGameObjectsWithTag ("Player");
+			GameObject ball = GameObject.FindGameObjectWithTag ("Ball");
+
+			foreach (GameObject p in players) //the line the error is pointing to
+			{
+				p.GetComponent<PlayerMovement>().Reset();
+			}
+
+			ball.GetComponent<BallMovement> ().Reset ();
 		}
 
 	}

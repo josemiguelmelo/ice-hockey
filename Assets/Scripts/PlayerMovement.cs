@@ -14,8 +14,15 @@ public class PlayerMovement : MonoBehaviour
 
 	private float movementSpeed = 0;
 
+	Vector3 originalPosition;
+	Quaternion originalRotation;
+
+	public GUIText goalText;
+
 	// Use this for initialization
 	void Start () {
+		originalPosition = transform.position;
+		originalRotation = transform.rotation;
 	}
 	
 	// Update is called once per frame
@@ -24,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetMouseButtonDown (0)) {
 			initialMousePosition = Input.mousePosition;
 			initTime = Time.time;
+			goalText.enabled = false;
 		}
 
 		else if(Input.GetMouseButtonUp(0)) {
@@ -40,23 +48,17 @@ public class PlayerMovement : MonoBehaviour
             Vector2 forceVec = new Vector2(movementSpeed * differenceVector.x, movementSpeed * differenceVector.y);
 
             GetComponent<Rigidbody2D>().AddForce(forceVec);
-
-            /*
-			GameObject player = GameObject.FindGameObjectWithTag ("Player");
-            if(player != null)
-            {
-                Rigidbody2D playerBody = player.GetComponent<Rigidbody2D>();
-
-                movementSpeed = distance / timeTaken;
-
-                playerBody.AddForce(
-                    new Vector2(movementSpeed * differenceVect  or.x,
-                        movementSpeed * differenceVector.y)
-                );
-            }
-            */
-
         }
+	}
+
+
+	public void Reset() {
+		transform.position = originalPosition;
+		transform.rotation = originalRotation;
+		if (GetComponent<Rigidbody2D>() != null) {
+			GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+			GetComponent<Rigidbody2D>().angularVelocity = 0;
+		}
 	}
 
 }
