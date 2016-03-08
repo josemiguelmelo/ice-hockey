@@ -140,6 +140,22 @@ Prefab:
       propertyPath: scoreBehaviour
       value: 
       objectReference: {fileID: 2072194028}
+    - target: {fileID: 6109674, guid: 141be08e2dae4a24eb184da4f94be835, type: 2}
+      propertyPath: m_Offset.x
+      value: -0.018555317
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109674, guid: 141be08e2dae4a24eb184da4f94be835, type: 2}
+      propertyPath: m_Size.x
+      value: 0.12289312
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109674, guid: 141be08e2dae4a24eb184da4f94be835, type: 2}
+      propertyPath: m_Offset.y
+      value: 0.000000006357829
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109674, guid: 141be08e2dae4a24eb184da4f94be835, type: 2}
+      propertyPath: m_Size.y
+      value: 0.14999999
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 141be08e2dae4a24eb184da4f94be835, type: 2}
   m_IsPrefabParent: 0
@@ -530,11 +546,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: 10
+  far clip plane: 30.01
+  field of view: 104
   orthographic: 1
-  orthographic size: 15.3
+  orthographic size: 15.688968
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -741,8 +757,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1026681929}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071067}
-  m_LocalPosition: {x: 18.30687, y: 8.825403, z: 0}
-  m_LocalScale: {x: 1.9816934, y: 1.2527747, z: 1}
+  m_LocalPosition: {x: 18.30687, y: 9, z: 0}
+  m_LocalScale: {x: 2.0985014, y: 1.2527747, z: 1}
   m_Children: []
   m_Father: {fileID: 1330040819}
   m_RootOrder: 0
@@ -1290,6 +1306,14 @@ Prefab:
     - target: {fileID: 166166, guid: 141be08e2dae4a24eb184da4f94be835, type: 2}
       propertyPath: m_Name
       value: goal_right
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109674, guid: 141be08e2dae4a24eb184da4f94be835, type: 2}
+      propertyPath: m_Offset.x
+      value: 0.013251683
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109674, guid: 141be08e2dae4a24eb184da4f94be835, type: 2}
+      propertyPath: m_Size.x
+      value: 0.13349181
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 141be08e2dae4a24eb184da4f94be835, type: 2}
