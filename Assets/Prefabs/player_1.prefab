@@ -12,9 +12,6 @@ GameObject:
   - 50: {fileID: 5005300}
   - 58: {fileID: 5824470}
   - 114: {fileID: 11440504}
-  - 114: {fileID: 11485828}
-  - 114: {fileID: 11430306}
-  - 114: {fileID: 11482288}
   m_Layer: 0
   m_Name: player_1
   m_TagString: Player
@@ -29,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 118588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.81, y: -2.74, z: 0}
+  m_LocalPosition: {x: -10.35, y: -0.04, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
@@ -65,19 +62,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.08
---- !u!114 &11430306
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 118588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6823fcafff58fae4baa568d9e97ae92c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myTransform: {fileID: 440650}
-  lerpRate: 12
 --- !u!114 &11440504
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,51 +73,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7730de3f3e31e422a892df94e2fe1202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goalText: {fileID: 13241614, guid: 1659d583bd268da4ab92c1d6409a9723, type: 2}
-  selected: 0
---- !u!114 &11482288
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 118588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3016612147f569a4d9c9306b2a8549fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11485828
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 118588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 229
-    i1: 50
-    i2: 0
-    i3: 187
-    i4: 17
-    i5: 115
-    i6: 48
-    i7: 4
-    i8: 155
-    i9: 127
-    i10: 70
-    i11: 31
-    i12: 39
-    i13: 118
-    i14: 81
-    i15: 41
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
 --- !u!212 &21268836
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -190,23 +129,6 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TransformSyncMode
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: myTransform
-      value: 
-      objectReference: {fileID: 440650}
-    - target: {fileID: 0}
-      propertyPath: m_LocalPlayerAuthority
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: goalText
-      value: 
-      objectReference: {fileID: 13241614, guid: 1659d583bd268da4ab92c1d6409a9723,
-        type: 2}
-    - target: {fileID: 0}
-      propertyPath: lerpRate
-      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

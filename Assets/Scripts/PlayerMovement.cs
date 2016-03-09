@@ -40,9 +40,7 @@ public class PlayerMovement : MonoBehaviour
 
 			GameObject nearestObject = null;
 			GameObject[] objects = GameObject.FindGameObjectsWithTag ("Player");
-            Debug.Log(objects.Length);
 			foreach (GameObject o in objects) {
-                Debug.Log(o.ToString());
 				o.GetComponent<PlayerMovement>().selected = false;
 				if (nearestObject == null) {
 					nearestObject = o;
