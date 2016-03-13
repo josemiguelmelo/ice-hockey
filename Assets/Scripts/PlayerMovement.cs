@@ -33,13 +33,16 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 
+		GameObject go = GameObject.Find ("GameController");
+		GameController gameController = go.GetComponent <GameController> ();
+
         if (Input.GetMouseButtonDown (0)) {
 			initialMousePosition = Input.mousePosition;
 			initTime = Time.time;
 			goalText.enabled = false;
 
 			GameObject nearestObject = null;
-			GameObject[] objects = GameObject.FindGameObjectsWithTag ("Player");
+			GameObject[] objects = gameController.getActivePlayerObjects ();
 			foreach (GameObject o in objects) {
 				o.GetComponent<PlayerMovement>().selected = false;
 				if (nearestObject == null) {
@@ -56,7 +59,6 @@ public class PlayerMovement : MonoBehaviour
 		}
 
 		else if(Input.GetMouseButtonUp(0)) {
-
 			if (selected) {
 				float endTime = Time.time;
 				float timeTaken = endTime - initTime;
@@ -71,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
 				Vector2 forceVec = new Vector2 (movementSpeed * differenceVector.x, movementSpeed * differenceVector.y);
 
 				GetComponent<Rigidbody2D> ().AddForce (forceVec);
+				gameController.changeTurn ();
 			}
         }
 	}

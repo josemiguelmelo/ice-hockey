@@ -39,6 +39,11 @@ public class GoalScript : MonoBehaviour {
 			}
 
 			ball.GetComponent<BallMovement> ().Reset ();
+
+
+			GameObject go = GameObject.Find ("GameController");
+			GameController gameController = go.GetComponent <GameController> ();
+			gameController.resetGame ();
 		}
 
 	}
