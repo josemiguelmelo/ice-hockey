@@ -756,7 +756,9 @@ MonoBehaviour:
   player1_2: {fileID: 1490174713}
   player2_1: {fileID: 2126299898}
   player2_2: {fileID: 1859066122}
-  turn: 1
+  playerText: {fileID: 2034674020}
+  turn: 0
+  activePlayerObjects: []
 --- !u!4 &893645753
 Transform:
   m_ObjectHideFlags: 0
@@ -1744,6 +1746,57 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 118588, guid: e53200bb117330049b7f461f27765129, type: 2}
   m_PrefabInternal: {fileID: 1225685576}
+--- !u!1 &2034674019
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2034674021}
+  - 132: {fileID: 2034674020}
+  m_Layer: 0
+  m_Name: playerText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!132 &2034674020
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2034674019}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: 'Player '
+  m_Anchor: 0
+  m_Alignment: 0
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 0}
+  m_Material: {fileID: 0}
+  m_FontSize: 20
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4288449035
+  m_PixelCorrect: 1
+  m_RichText: 1
+--- !u!4 &2034674021
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2034674019}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.45, y: 0.23, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
 --- !u!1 &2072194027
 GameObject:
   m_ObjectHideFlags: 0

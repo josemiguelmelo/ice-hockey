@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour {
 	public GameObject player1_2;
 	public GameObject player2_1;
 	public GameObject player2_2;
+	public GUIText playerText;
 
 	public int turn;
 
@@ -21,6 +22,8 @@ public class GameController : MonoBehaviour {
 	void Start () {
 		turn = 0;
 		changeTurn ();
+
+		playerText.enabled = true;
 	}
 
 	void Update() {
@@ -33,9 +36,11 @@ public class GameController : MonoBehaviour {
 		if (turn % 2 == 0) {
 			activePlayerObjects.Add (player1_1);
 			activePlayerObjects.Add (player1_2);
+			playerText.text = "Player 1";
 		} else {
 			activePlayerObjects.Add (player2_1);
 			activePlayerObjects.Add (player2_2);
+			playerText.text = "Player 2";
 		}
 
 		player1_1.GetComponent<PlayerMovement>().selected = false;
