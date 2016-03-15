@@ -17,8 +17,6 @@ public class PlayerMovement : MonoBehaviour
 	Vector3 originalPosition;
 	Quaternion originalRotation;
 
-	public GUIText goalText;
-
 	public bool selected;
 
 	// Use this for initialization
@@ -39,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetMouseButtonDown (0)) {
 			initialMousePosition = Input.mousePosition;
 			initTime = Time.time;
-			goalText.enabled = false;
 
 			GameObject nearestObject = null;
 			GameObject[] objects = gameController.getActivePlayerObjects ();
