@@ -530,6 +530,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 13263332, guid: 4980a859a95d6455ea952accf6ed6de8, type: 2}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4980a859a95d6455ea952accf6ed6de8, type: 2}
   m_IsPrefabParent: 0
@@ -687,6 +691,7 @@ GameObject:
   - 4: {fileID: 893645753}
   - 114: {fileID: 893645752}
   - 114: {fileID: 893645754}
+  - 114: {fileID: 893645755}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -707,7 +712,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goalText: {fileID: 13244402, guid: 7900a8aba218a48639ab718796a63598, type: 2}
   activePlayerObjects: []
-  gameType: 0
 --- !u!4 &893645753
 Transform:
   m_ObjectHideFlags: 0
@@ -726,7 +730,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 893645751}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bcf0d582d5e544931a8b3cdc942e0973, type: 3}
   m_Name: 
@@ -734,8 +738,20 @@ MonoBehaviour:
   playerText: {fileID: 529527236}
   players: []
   playerObject: {fileID: 118588, guid: e53200bb117330049b7f461f27765129, type: 2}
-  activePlayerObjects: []
   turn: 0
+--- !u!114 &893645755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 893645751}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f2b2acaed1dd4dd184ac761289dcaf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players: []
+  playerObject: {fileID: 118588, guid: e53200bb117330049b7f461f27765129, type: 2}
 --- !u!1001 &968602046
 Prefab:
   m_ObjectHideFlags: 0

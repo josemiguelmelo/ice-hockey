@@ -560,7 +560,7 @@ GameObject:
   - 222: {fileID: 2075526111}
   - 114: {fileID: 2075526110}
   m_Layer: 5
-  m_Name: StartText
+  m_Name: Free For All
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -617,7 +617,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Outro modo
+  m_Text: Free For All
 --- !u!222 &2075526111
 CanvasRenderer:
   m_ObjectHideFlags: 0

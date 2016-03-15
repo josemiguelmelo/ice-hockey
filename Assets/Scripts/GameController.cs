@@ -24,6 +24,13 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		if(gameType == 1) {
+			this.GetComponent<TurnBasedGM> ().enabled = true;
+		} 
+		else 
+		{
+			this.GetComponent<FreeForAllGM> ().enabled = true;
+		}
 	}
 
 	void Update() {

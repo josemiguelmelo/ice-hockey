@@ -9,11 +9,7 @@ public class TurnBasedGM : MonoBehaviour {
 	public List<GameObject> players;
 
 	public GameObject playerObject;
-	public List<GameObject> activePlayerObjects;
 
-	public GameObject[] getActivePlayerObjects() {
-		return activePlayerObjects.ToArray ();
-	}
 	public int turn = 0;
 
 
