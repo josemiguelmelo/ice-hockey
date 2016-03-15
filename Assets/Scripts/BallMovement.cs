@@ -8,7 +8,6 @@ public class BallMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GetComponent<Rigidbody2D>().AddForce(new Vector2(200,100)); 
 		originalPosition = transform.position;
 		originalRotation = transform.rotation;
 	}

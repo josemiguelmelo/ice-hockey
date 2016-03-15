@@ -14,7 +14,7 @@ public class GoalScript : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.gameObject.name == "ball") 
+		if (collision.gameObject.name == "Ball") 
 		{
 			goalText.enabled = true;
 
@@ -39,11 +39,6 @@ public class GoalScript : MonoBehaviour {
 			}
 
 			ball.GetComponent<BallMovement> ().Reset ();
-
-
-			GameObject go = GameObject.Find ("GameController");
-			GameController gameController = go.GetComponent <GameController> ();
-			gameController.resetGame ();
 		}
 
 	}

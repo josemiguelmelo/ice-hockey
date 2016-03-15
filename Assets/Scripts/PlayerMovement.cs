@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
 
 			GameObject nearestObject = null;
 			GameObject[] objects = gameController.getActivePlayerObjects ();
+
 			foreach (GameObject o in objects) {
 				o.GetComponent<PlayerMovement>().selected = false;
 				if (nearestObject == null) {
@@ -70,11 +71,14 @@ public class PlayerMovement : MonoBehaviour
 				Vector2 forceVec = new Vector2 (movementSpeed * differenceVector.x, movementSpeed * differenceVector.y);
 
 				GetComponent<Rigidbody2D> ().AddForce (forceVec);
-				gameController.changeTurn ();
+
+				if (go.GetComponent<GameController> ().gameType == 1) {
+					go.GetComponent<TurnBasedGM> ().changeTurn ();
+				}
+
 			}
         }
 	}
-
 
 	public void Reset() {
 		transform.position = originalPosition;
