@@ -710,7 +710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a40a569991d744e6b2d65bebf846de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goalText: {fileID: 13244402, guid: 7900a8aba218a48639ab718796a63598, type: 2}
+  goalText: {fileID: 1284882150}
   activePlayerObjects: []
 --- !u!4 &893645753
 Transform:

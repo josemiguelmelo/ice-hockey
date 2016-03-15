@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
 		GameController gameController = go.GetComponent <GameController> ();
 
         if (Input.GetMouseButtonDown (0)) {
+			gameController.goalText.enabled=false;
 			initialMousePosition = Input.mousePosition;
 			initTime = Time.time;
 
