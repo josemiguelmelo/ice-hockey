@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
 
 				GetComponent<Rigidbody2D> ().AddForce (forceVec);
 
-				if (go.GetComponent<GameController> ().gameType == 1) {
+				if (GameController.gameType == 1) {
 					go.GetComponent<TurnBasedGM> ().changeTurn ();
 				}
 

@@ -35,8 +35,19 @@ public class StartOptions : MonoBehaviour {
 	}
 
 
-	public void StartButtonClicked()
+	public void FreeForAllClicked()
 	{
+		GameController.gameType = 2;
+		StartScene ();
+	}
+
+	public void TurnBasedClicked()
+	{
+		GameController.gameType = 1;
+		StartScene ();
+	}
+
+	public void StartScene() {
 		//If changeMusicOnStart is true, fade out volume of music group of AudioMixer by calling FadeDown function of PlayMusic, using length of fadeColorAnimationClip as time. 
 		//To change fade time, change length of animation "FadeToColor"
 		if (changeMusicOnStart) 
@@ -60,7 +71,6 @@ public class StartOptions : MonoBehaviour {
 			//Call the StartGameInScene function to start game without loading a new scene.
 			StartGameInScene();
 		}
-
 	}
 
 	//Once the level has loaded, check if we want to call PlayLevelMusic

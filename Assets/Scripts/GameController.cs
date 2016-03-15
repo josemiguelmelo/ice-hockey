@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour {
 
 	public List<GameObject> activePlayerObjects;
 
-	public int gameType;
+	public static int gameType;
 
 	public GameObject[] getActivePlayerObjects() {
 		return activePlayerObjects.ToArray ();
@@ -24,7 +24,6 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		gameType = 1;
 	}
 
 	void Update() {
