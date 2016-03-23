@@ -13,8 +13,8 @@ public class ScoreBehaviour : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		homeScore = 0;
-		visitorScore = 0;
+		homeScore = 5;
+		visitorScore = 5;
 	}
 
 
@@ -28,6 +28,15 @@ public class ScoreBehaviour : MonoBehaviour {
 
 		homeScoreText.text = homeScore.ToString();
 		visitScoreText.text = visitorScore.ToString();
+
+        Debug.Log("Home Score: " + homeScore);
+        Debug.Log("Visitor Score: " + visitorScore);
+
+        if (homeScore == 5 || visitorScore == 5)
+        {
+            Debug.Log("Acabou o jogo");
+            GameController.EndGame();
+        }
 	}
 
 }

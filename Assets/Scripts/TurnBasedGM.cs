@@ -9,8 +9,9 @@ public class TurnBasedGM : MonoBehaviour {
 	public List<GameObject> players;
 
 	public GameObject playerObject;
+    public List<Sprite> playerSprites;
 
-	public int turn = 0;
+    public int turn = 0;
 
 
 	// Use this for initialization
@@ -20,14 +21,34 @@ public class TurnBasedGM : MonoBehaviour {
 		players.Add ((GameObject)Instantiate (playerObject, new Vector3 (-12.63f, 3.26f, 0f), Quaternion.identity));
 		players.Add ((GameObject)Instantiate (playerObject, new Vector3 (-12.76f, -2.74f, 0f), Quaternion.identity));
 
-		//right player instances
-		players.Add((GameObject)Instantiate (playerObject, new Vector3 (12.63f, 3.26f, 0f), Quaternion.identity));
-		players.Add((GameObject)Instantiate (playerObject, new Vector3 (12.63f, -2.74f, 0f), Quaternion.identity));
-		players [2].GetComponent<SpriteRenderer> ().color = Color.blue;
-		players [3].GetComponent<SpriteRenderer> ().color = Color.blue;
+        //set red team sprites
+        players[0].GetComponent<SpriteRenderer>().sprite = playerSprites[0];
+        players[0].transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+        Destroy(players[0].GetComponent<CircleCollider2D>());
+        players[0].AddComponent<CircleCollider2D>();
 
-		//left player starts playing
-		turn = 0;
+        players[1].GetComponent<SpriteRenderer>().sprite = playerSprites[1];
+        players[1].transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+        Destroy(players[1].GetComponent<CircleCollider2D>());
+        players[1].AddComponent<CircleCollider2D>();
+
+        //right player instances
+        players.Add((GameObject)Instantiate (playerObject, new Vector3 (12.63f, 3.26f, 0f), Quaternion.identity));
+		players.Add((GameObject)Instantiate (playerObject, new Vector3 (12.63f, -2.74f, 0f), Quaternion.identity));
+        //players [2].GetComponent<SpriteRenderer> ().color = Color.blue;
+        //players [3].GetComponent<SpriteRenderer> ().color = Color.blue;
+        players[2].GetComponent<SpriteRenderer>().sprite = playerSprites[2];
+        players[2].transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+        Destroy(players[2].GetComponent<CircleCollider2D>());
+        players[2].AddComponent<CircleCollider2D>();
+
+        players[3].GetComponent<SpriteRenderer>().sprite = playerSprites[3];
+        players[3].transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+        Destroy(players[3].GetComponent<CircleCollider2D>());
+        players[3].AddComponent<CircleCollider2D>();
+
+        //left player starts playing
+        turn = 0;
 		playerText.enabled = true;
 		GetComponent<GameController>().addActivePlayer(players[0]);
 		GetComponent<GameController>().addActivePlayer(players[1]);

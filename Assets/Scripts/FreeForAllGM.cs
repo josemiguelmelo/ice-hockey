@@ -9,6 +9,8 @@ public class FreeForAllGM : MonoBehaviour {
 
 	public GameObject playerObject;
 
+    public Sprite playerSprite;
+
 	// Use this for initialization
 	void Start () {
 		//left player instances
@@ -18,7 +20,10 @@ public class FreeForAllGM : MonoBehaviour {
 		players.Add((GameObject)Instantiate (playerObject, new Vector3 (12.63f, -2.74f, 0f), Quaternion.identity));
 
 		foreach (GameObject player in players) {
-			player.GetComponent<SpriteRenderer> ().color = Color.blue;
+			player.GetComponent<SpriteRenderer> ().sprite = playerSprite;
+            player.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+            Destroy(player.GetComponent<CircleCollider2D>());
+            player.AddComponent<CircleCollider2D>();
 			GetComponent<GameController> ().addActivePlayer (player);
 		}
 
