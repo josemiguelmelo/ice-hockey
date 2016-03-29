@@ -65,13 +65,13 @@ public class TurnBasedGM : MonoBehaviour {
 		{
 			GetComponent<GameController>().addActivePlayer(players[0]);
 			GetComponent<GameController>().addActivePlayer(players[1]);
-			playerText.text = "Red turn";
+			playerText.text = "Player 1 turn";
 		} 
 		else 
 		{
 			GetComponent<GameController>().addActivePlayer(players[2]);
 			GetComponent<GameController>().addActivePlayer(players[3]);
-			playerText.text = "Blue turn";
+			playerText.text = "Player 2 turn";
 		}
 
 		this.resetPlayersSelection ();

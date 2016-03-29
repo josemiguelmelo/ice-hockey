@@ -7,14 +7,15 @@ public class ScoreBehaviour : MonoBehaviour {
 	public int homeScore;
 	public int visitorScore;
 
-
 	public GUIText homeScoreText;
 	public GUIText visitScoreText;
+    public GameObject winText;
+    public GUIText goalText;
 
 	// Use this for initialization
 	void Start () {
-		homeScore = 5;
-		visitorScore = 5;
+		homeScore = 0;
+		visitorScore = 0;
 	}
 
 
@@ -34,9 +35,16 @@ public class ScoreBehaviour : MonoBehaviour {
 
         if (homeScore == 5 || visitorScore == 5)
         {
-            Debug.Log("Acabou o jogo");
+            goalText.enabled = false;
+            winText.SetActive(true);
+            int winner = 1;
+            if (visitorScore == 5)
+                winner = 2;
+            winText.GetComponent<GUIText>().text = "Player " + winner + " wins!";
             GameController.EndGame();
         }
 	}
+
+    
 
 }
