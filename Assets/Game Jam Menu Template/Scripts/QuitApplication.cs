@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class QuitApplication : MonoBehaviour {
 
@@ -16,6 +17,13 @@ public class QuitApplication : MonoBehaviour {
 		//Stop playing the scene
 		UnityEditor.EditorApplication.isPlaying = false;
 	#endif
+	}
+
+
+	public void LoadMainScene()
+	{
+		//Load the selected scene, by scene index number in build settings
+		SceneManager.LoadScene(0);
 	}
     
 }

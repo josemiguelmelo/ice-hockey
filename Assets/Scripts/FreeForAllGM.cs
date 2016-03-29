@@ -21,13 +21,11 @@ public class FreeForAllGM : MonoBehaviour {
 
 		foreach (GameObject player in players) {
 			player.GetComponent<SpriteRenderer> ().sprite = playerSprite;
-            player.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+            player.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
             Destroy(player.GetComponent<CircleCollider2D>());
             player.AddComponent<CircleCollider2D>();
 			GetComponent<GameController> ().addActivePlayer (player);
 		}
-
-
 	}
 	
 	// Update is called once per frame
