@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
 				Vector3 differenceVector = (endPosition - initialMousePosition).normalized;
 
-				movementSpeed = distance / timeTaken;
+				movementSpeed = Mathf.Min(distance / timeTaken, 813f);
 
 				Vector2 forceVec = new Vector2 (movementSpeed * differenceVector.x, movementSpeed * differenceVector.y);
 
